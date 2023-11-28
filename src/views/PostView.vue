@@ -5,6 +5,7 @@ import { useRoute } from 'vue-router'
 import Hero from '../components/Hero.vue'
 import CategoryButton from '../components/CategoryButton.vue'
 import IconsList from '../components/IconsList.vue'
+import { useHead } from '@unhead/vue'
 
 const route = useRoute()
 
@@ -20,18 +21,76 @@ watchEffect(async () => {
     (response) => response.json()
   )
   post.value = response.data
+  const postDescription = (post?.value?.[0].attributes?.content).substring(0, 150)
   loaded.value = true
+
+  useHead({
+    title: `${post?.value?.[0].attributes?.title} | Naturalmente Irritada`,
+    meta: [
+      {
+        name: 'description',
+        content: postDescription
+      },
+      {
+        name: 'robots',
+        content: 'index, follow'
+      },
+      {
+        name: 'og:type',
+        content: 'website'
+      },
+      {
+        name: 'og:url',
+        content: `https://naturalmenteirritada.blog/${post?.value?.[0].attributes?.url}`
+      },
+      {
+        name: 'og:title',
+        content: `${post?.value?.[0].attributes?.title} | Naturalmente Irritada`
+      },
+      {
+        name: 'og:description',
+        content: postDescription
+      },
+      {
+        name: 'og:image',
+        content: `${imagePath.value}${post?.value?.[0].attributes?.image?.data?.attributes?.url}`
+      },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image'
+      },
+      {
+        name: 'og:url',
+        content: `https://naturalmenteirritada.blog/${post?.value?.[0].attributes?.url}`
+      },
+      {
+        name: 'og:title',
+        content: `${post?.value?.[0].attributes?.title} | Naturalmente Irritada`
+      },
+      {
+        name: 'twitter:description',
+        content: postDescription
+      },
+      {
+        name: 'twitter:image',
+        content: `${imagePath.value}${post?.value?.[0].attributes?.image?.data?.attributes?.url}`
+      }
+    ]
+  })
 })
 </script>
 
 <template>
-  <Hero :image="`${imagePath}${post?.[0].attributes?.image?.data?.attributes?.url}`"></Hero>
+  <Hero
+    :imageAlt="post?.[0].attributes?.image?.data?.attributes?.alternativeText"
+    :image="`${imagePath}${post?.[0].attributes?.image?.data?.attributes?.url}`"
+  ></Hero>
   <main class="main main--flex">
     <article class="main__section main__section--padding">
-      <p class="post__date">
+      <p class="post__date" itemprop="datePublished">
         Postado em {{ $dayjs(post?.[0].attributes?.date).format('DD [de] MMMM [de] YYYY') }}
       </p>
-      <h1 class="post__title">{{ post?.[0].attributes?.title }}</h1>
+      <h1 class="post__title" itemprop="headline">{{ post?.[0].attributes?.title }}</h1>
       <div
         v-if="post?.[0].attributes?.content"
         class="markdown"

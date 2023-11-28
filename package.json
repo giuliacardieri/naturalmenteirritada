@@ -10,9 +10,11 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@unhead/vue": "^1.8.8",
     "dayjs": "^1.11.10",
     "markdown-it": "^13.0.2",
     "vue": "^3.3.4",
+    "vue-meta": "^3.0.0-alpha.2",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {

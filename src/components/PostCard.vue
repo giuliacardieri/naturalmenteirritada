@@ -1,9 +1,12 @@
 <script setup>
 import { RouterLink } from 'vue-router'
+import { computed } from 'vue'
 
 defineProps({
   post: { type: Object }
 })
+
+const imagePath = computed(() => import.meta.env.VITE_IMAGE_PATH)
 
 function getImageUrl(value) {
   return new URL(`../assets/icons/${value}.png`, import.meta.url).href
@@ -11,11 +14,17 @@ function getImageUrl(value) {
 </script>
 
 <template>
-  <RouterLink class="card" :to="`/post/${post?.attributes?.url}`">
+  <RouterLink
+    class="card"
+    itemprop="url"
+    :to="`/post/${post?.attributes?.url}`"
+    itemscope
+    itemtype="https://schema.org/NewsArticle"
+  >
     <img
       v-if="post?.attributes?.image"
       class="card__image"
-      :src="`http://localhost:1337${post?.attributes?.image?.data?.attributes?.formats?.small?.url}`"
+      :src="`${imagePath}${post?.attributes?.image?.data?.attributes?.formats?.small?.url}`"
       :alt="post?.attributes?.image?.data?.attributes?.alternativeText"
     />
     <div class="card__text">
@@ -25,11 +34,14 @@ function getImageUrl(value) {
             class="card__icon"
             :alt="post?.attributes?.category?.data?.attributes?.name"
             :src="getImageUrl(post?.attributes?.category?.data?.attributes?.value)"
+            itemprop="image"
         /></span>
         {{ post?.attributes?.category?.data?.attributes?.name }} -
-        {{ $dayjs(post?.attributes?.date).format('DD [de] MMM [de] YYYY') }}
+        <span itemprop="datePublished">{{
+          $dayjs(post?.attributes?.date).format('DD [de] MMM [de] YYYY')
+        }}</span>
       </p>
-      <h3 class="card__title">{{ post?.attributes?.title }}</h3>
+      <h3 class="card__title" itemprop="headline">{{ post?.attributes?.title }}</h3>
       <p class="card__description">{{ post?.attributes?.content }}</p>
     </div>
   </RouterLink>

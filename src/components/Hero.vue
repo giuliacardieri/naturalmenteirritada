@@ -4,6 +4,7 @@ defineProps({
   title: { type: String },
   description: { type: String },
   image: { type: String },
+  imageAlt: { type: String },
   isMain: { type: Boolean, default: false }
 })
 </script>
@@ -17,7 +18,7 @@ defineProps({
         src="/assets/overlay-main.svg"
         role="presentation"
       />
-      <img v-if="image" class="hero__image" :src="image" alt="aaa" />
+      <img v-if="image" class="hero__image" :src="image" :alt="imageAlt" />
     </div>
     <div v-if="isMain" class="hero__wrapper">
       <div class="hero__text">
