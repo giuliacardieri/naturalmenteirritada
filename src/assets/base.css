@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'Futura';
+  src: url('@/assets/fonts/futura-medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Futura';
+  font-weight: bold;
+  src: url('@/assets/fonts/futura-bold-heavy.ttf') format('truetype');
+}
+
+:root {
+  --white: #f9f9f9;
+  --black: #222;
+  --gray: #727272;
+  --dark-green: #425333;
+  --green: #66814f;
+  --dark-blue: #2f3b4e;
+  --blue: #4e617f;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  color: var(--black);
+  font-family: 'Futura', sans-serif;
+  min-height: 100vh;
+  padding: 0;
+  position: relative;
+}

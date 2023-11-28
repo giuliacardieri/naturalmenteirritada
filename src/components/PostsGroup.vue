@@ -1,0 +1,46 @@
+<script setup>
+import { ref, watchEffect, computed } from 'vue'
+import Earth from '../components/illustrations/Earth.vue'
+import PostCard from '../components/PostCard.vue'
+
+const props = defineProps({
+  category: {
+    type: String
+  }
+})
+
+const posts = ref([])
+const loaded = ref(false)
+
+const api = computed(() => import.meta.env.VITE_API)
+
+watchEffect(async () => {
+  let url = `${api.value}/posts?populate=*`
+  if (props.category.length)
+    url = `${api.value}/posts?populate=*&filters[category][value]=${props.category}`
+
+  const response = await fetch(url).then((response) => response.json())
+  posts.value = response.data
+  loaded.value = true
+})
+</script>
+
+<template>
+  <div v-if="loaded" class="posts">
+    <PostCard v-for="post in posts" :key="post.id" :post="post" />
+  </div>
+  <section v-if="!loaded || !posts.length">
+    <div class="main__empty">
+      <Earth mad />
+      <h2 class="main__h2">Que droga!<br />Ainda não temos posts nessa categoria.</h2>
+    </div>
+  </section>
+</template>
+
+<style scoped>
+.posts {
+  display: grid;
+  grid-column-gap: 48px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+</style>

@@ -1,0 +1,26 @@
+.markdown h2 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.5;
+  margin: 0.5em 0 0 0;
+}
+
+.markdown h3 {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1.5;
+  margin: 1em 0 0 0;
+}
+
+.markdown h2 + h3 {
+  margin-top: 0px;
+}
+
+.markdown p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.markdown p + p {
+  margin-top: 1em;
+}
