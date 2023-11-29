@@ -10,7 +10,7 @@ defineProps({
 
 const categories = [
   { label: 'Todos', value: '', noIcon: true },
-  { label: 'Asteroídes', value: 'asteroides', noIcon: false },
+  { label: 'Asteroides', value: 'asteroides', noIcon: false },
   { label: 'Enchentes', value: 'enchentes', noIcon: false },
   { label: 'Furacões', value: 'furacoes', noIcon: false },
   { label: 'Terremotos', value: 'terremotos', noIcon: false },
