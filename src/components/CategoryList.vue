@@ -58,4 +58,10 @@ function updateActive(value) {
 .categories__item {
   list-style-type: none;
 }
+
+@media (max-width: 1024px) {
+  .categories {
+    overflow-x: auto;
+  }
+}
 </style>

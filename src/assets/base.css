@@ -17,6 +17,7 @@
   --green: #66814f;
   --dark-blue: #2f3b4e;
   --blue: #4e617f;
+  --blue-transparent: rgba(78, 97, 127, 0.52);
 }
 
 *,

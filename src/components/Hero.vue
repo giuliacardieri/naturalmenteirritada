@@ -68,12 +68,6 @@ defineProps({
   width: 100%;
 }
 
-.hero__image-overlay {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
 .hero__text {
   z-index: 1;
 }
@@ -94,15 +88,69 @@ defineProps({
   min-width: 300px;
 }
 
-.hero__earth {
-  transform: scale(3);
-}
-
 .hero--main {
   margin-top: 0;
 }
+.hero__image-overlay {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
 
-.hero--main .hero__text {
-  width: 50%;
+@media (min-width: 1025px) {
+  .hero--main .hero__text {
+    width: 50%;
+  }
+
+  .hero__earth {
+    transform: scale(3);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero__image-overlay {
+    display: none;
+  }
+  .hero--main .hero__overlay {
+    background-color: var(--blue-transparent);
+    height: 100%;
+    position: absolute;
+    width: 100%;
+  }
+
+  .hero__earth {
+    transform: scale(2);
+  }
+
+  .hero__drawing {
+    min-width: 160px;
+  }
+
+  .hero__text {
+    margin-right: 64px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero__wrapper {
+    align-items: flex-start;
+    flex-direction: column-reverse;
+    gap: 16px;
+    padding: 0 24px;
+    z-index: 0;
+  }
+
+  .hero__title {
+    font-size: 40px;
+  }
+
+  .hero__description {
+    font-size: 18px;
+    margin-top: 8px;
+  }
+
+  .hero__earth {
+    transform: scale(1);
+  }
 }
 </style>

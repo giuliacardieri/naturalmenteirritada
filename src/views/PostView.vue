@@ -130,11 +130,6 @@ watchEffect(async () => {
   position: relative;
 }
 
-.post__content {
-  position: sticky;
-  top: 104px;
-}
-
 .post__title {
   margin-bottom: 8px;
 }
@@ -145,5 +140,23 @@ watchEffect(async () => {
 
 .post__section + .post__section {
   margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+  .post__content {
+    position: sticky;
+    top: 104px;
+  }
+}
+
+@media (max-width: 767px) {
+  .post__sidebar {
+    min-width: 100vw;
+    padding: 24px 24px 48px 24px;
+  }
+
+  .post__section + .post__section {
+    margin-top: 16px;
+  }
 }
 </style>

@@ -30,7 +30,7 @@ watchEffect(async () => {
     <PostCard v-for="post in posts" :key="post.id" :post="post" />
   </div>
   <section v-if="!loaded || !posts.length">
-    <div class="main__empty">
+    <div class="posts__empty">
       <Earth mad />
       <h2 class="main__h2">Que droga!<br />Ainda não temos posts nessa categoria.</h2>
     </div>
@@ -42,5 +42,28 @@ watchEffect(async () => {
   display: grid;
   grid-column-gap: 48px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.posts__empty {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+}
+
+@media (max-width: 1024px) {
+  .posts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .posts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .posts__empty {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
 }
 </style>

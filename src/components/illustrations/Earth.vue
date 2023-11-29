@@ -23,7 +23,7 @@ defineProps({
   height: 80px;
   position: relative;
   width: 80px;
-  z-index: 2;
+  z-index: 0;
 }
 
 .earth:not(.earth--mad) .eye:after {
@@ -65,7 +65,7 @@ defineProps({
   position: absolute;
   top: 24px;
   width: 12px;
-  z-index: 2;
+  z-index: 1;
 }
 .eye:after {
   background-color: var(--white);
