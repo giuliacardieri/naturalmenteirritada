@@ -61,7 +61,7 @@ a {
   margin-top: 24px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   .main--flex {
     display: flex;
     gap: 32px;

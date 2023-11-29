@@ -142,10 +142,16 @@ watchEffect(async () => {
   margin-top: 24px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   .post__content {
     position: sticky;
     top: 104px;
+  }
+}
+
+@media (max-width: 1025px) {
+  .post__sidebar {
+    padding: 32px 72px 48px 72px;
   }
 }
 

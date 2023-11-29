@@ -174,6 +174,12 @@ async function toggleMenu() {
   width: 16px;
 }
 
+@media (max-width: 1024px) {
+  .header__title {
+    font-size: 24px;
+  }
+}
+
 @media (max-width: 767px) {
   .header {
     padding: 16px 24px 24px 24px;
@@ -197,10 +203,6 @@ async function toggleMenu() {
     position: fixed;
     top: 0;
     width: 100vw;
-  }
-
-  .header__title {
-    font-size: 24px;
   }
 
   .header__illustration {

@@ -59,7 +59,7 @@ function updateActive(value) {
   list-style-type: none;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1300px) {
   .categories {
     overflow-x: auto;
   }
