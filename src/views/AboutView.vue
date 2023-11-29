@@ -74,7 +74,7 @@ const imagePath = computed(() => import.meta.env.VITE_IMAGE_PATH)
     <section class="main__section main__section--flex">
       <img
         class="main__image"
-        src="/assets/tsunami.jpg"
+        src="/assets/cho.jpg"
         alt="Uma placa branca e azul em inglês escrito rota de evacuação para tsunami"
       />
       <div>
