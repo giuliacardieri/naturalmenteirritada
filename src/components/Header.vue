@@ -31,7 +31,9 @@ async function toggleMenu() {
     </div>
     <ul class="header__ul">
       <li class="header__li">
-        <RouterLink class="header__link" to="/">Home</RouterLink>
+        <RouterLink :class="[isHome ? 'header__link--active' : '', 'header__link']" to="/"
+          >Home</RouterLink
+        >
       </li>
       <li class="header__li">
         <RouterLink class="header__link" to="/sobre">Sobre</RouterLink>
@@ -88,6 +90,7 @@ async function toggleMenu() {
   color: var(--black);
 }
 
+.header--home .header__link--active:after,
 .header--home .header__link.router-link-exact-active:after {
   background-color: var(--black);
 }
@@ -160,6 +163,7 @@ async function toggleMenu() {
   background-color: rgba(255, 255, 255, 0.25);
 }
 .header__link:focus:after,
+.header__link--active:after,
 .header__link.router-link-exact-active:after {
   background-color: var(--white);
   bottom: -2px;
