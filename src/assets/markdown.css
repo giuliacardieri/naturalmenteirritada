@@ -24,3 +24,12 @@
 .markdown p + p {
   margin-top: 1em;
 }
+
+.markdown a {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.markdown ul {
+  margin: 1em;
+}
