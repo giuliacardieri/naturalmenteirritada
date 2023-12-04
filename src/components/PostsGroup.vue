@@ -15,9 +15,9 @@ const loaded = ref(false)
 const api = computed(() => import.meta.env.VITE_API)
 
 watchEffect(async () => {
-  let url = `${api.value}/posts?populate=*`
+  let url = `${api.value}/posts?populate=*&sort[0]=date:DESC`
   if (props.category.length)
-    url = `${api.value}/posts?populate=*&filters[category][value]=${props.category}`
+    url = `${api.value}/posts?populate=*&filters[category][value]=${props.category}&sort[0]=date:DESC`
 
   const response = await fetch(url).then((response) => response.json())
   posts.value = response.data
