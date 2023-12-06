@@ -24,8 +24,8 @@ function getImageUrl(value) {
     <img
       v-if="post?.attributes?.image"
       class="card__image"
-      :src="`${imagePath}${post?.attributes?.image?.data?.attributes?.formats?.small?.url}`"
-      :alt="post?.attributes?.image?.data?.attributes?.alternativeText"
+      :src="`${imagePath}${post?.attributes?.image?.image?.data?.attributes?.formats?.small?.url}`"
+      :alt="post?.attributes?.image?.image?.data?.attributes?.alternativeText"
     />
     <div class="card__text">
       <p class="card__info">

@@ -1,28 +1,10 @@
 @import './base.css';
 @import './markdown.css';
-
-h1 {
-  font-size: 32px;
-  font-weight: bold;
-  margin: 0 0 8px 0;
-}
-
-h2 {
-  font-size: 16px;
-  margin: 0 0 8px 0;
-}
-
-p {
-  font-size: 18px;
-  line-height: 27px;
-}
-
-a {
-  color: var(--black);
-}
+@import './typography.css';
 
 .main {
-  padding: 32px 64px 64px 64px;
+  padding: var(--main-padding, 32px 64px 64px 64px);
+  width: 100%;
 }
 
 .main--flex {
@@ -35,11 +17,7 @@ a {
 }
 
 .main__section {
-  max-width: 1440px;
-}
-
-.main__section--padding {
-  padding: 32px 64px;
+  width: 100%;
 }
 
 .main__section--flex {
@@ -63,19 +41,14 @@ a {
 
 @media (min-width: 1025px) {
   .main--flex {
-    display: flex;
-    gap: 32px;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 560px;
   }
 }
 
 @media (max-width: 767px) {
   .main:not(.main--flex) {
-    padding: 32px 24px 48px 24px;
-  }
-
-  .main__section--padding {
-    padding: 32px 24px;
+    --main-padding: 32px 24px 48px 24px;
   }
 
   .main__section + .main__section {

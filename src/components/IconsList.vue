@@ -7,7 +7,8 @@ defineProps({
 
 const icons = [
   { label: 'Email', link: 'mailto:naturalmenteirritada@gmail.com', icon: 'email' },
-  { label: 'Instagram', link: 'https://instagram.com/naturalmenteirritada', icon: 'instagram' }
+  { label: 'Instagram', link: 'https://instagram.com/naturalmenteirritada', icon: 'instagram' },
+  { label: 'Facebook', link: 'https://www.facebook.com/naturalmenteirritada', icon: 'facebook' }
 ]
 </script>
 

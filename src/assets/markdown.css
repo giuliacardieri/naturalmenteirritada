@@ -16,7 +16,9 @@
   margin-top: 0px;
 }
 
-.markdown p {
+.markdown p,
+.markdown a,
+.markdown li {
   font-size: 20px;
   line-height: 1.5;
 }
@@ -25,11 +27,6 @@
   margin-top: 1em;
 }
 
-.markdown a {
-  font-size: 18px;
-  line-height: 1.5;
-}
-
 .markdown ul {
-  padding-left: 1em;
+  padding: 0.5rem 0 0.5rem 1.75em;
 }

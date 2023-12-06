@@ -4,6 +4,7 @@ defineProps({
   title: { type: String },
   description: { type: String },
   image: { type: String },
+  imageAlignBottom: { type: Boolean, default: false },
   imageAlt: { type: String },
   isMain: { type: Boolean, default: false }
 })
@@ -18,7 +19,12 @@ defineProps({
         src="/assets/overlay-main.svg"
         role="presentation"
       />
-      <img v-if="image" class="hero__image" :src="image" :alt="imageAlt" />
+      <img
+        v-if="image"
+        :class="[{ 'hero__image--bottom': imageAlignBottom }, 'hero__image']"
+        :src="image"
+        :alt="imageAlt"
+      />
     </div>
     <div v-if="isMain" class="hero__wrapper">
       <div class="hero__text">
@@ -66,6 +72,10 @@ defineProps({
   height: 100%;
   object-fit: cover;
   width: 100%;
+}
+
+.hero__image--bottom {
+  object-position: bottom;
 }
 
 .hero__text {

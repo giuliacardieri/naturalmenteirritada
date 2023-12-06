@@ -1,0 +1,25 @@
+<script setup>
+defineProps({
+  title: { type: String },
+  src: { type: String }
+})
+</script>
+
+<template>
+  <iframe
+    class="embedded-map"
+    :src="src"
+    width="600"
+    height="400"
+    style="border: 0"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+  ></iframe>
+</template>
+
+<style scoped>
+.embedded-map {
+  width: 100%;
+}
+</style>

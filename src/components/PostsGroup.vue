@@ -15,9 +15,9 @@ const loaded = ref(false)
 const api = computed(() => import.meta.env.VITE_API)
 
 watchEffect(async () => {
-  let url = `${api.value}/posts?populate=*&sort[0]=date:DESC`
+  let url = `${api.value}/posts?populate[image][populate][0]=image&populate[category][populate][0]=category&sort[0]=date:DESC`
   if (props.category.length)
-    url = `${api.value}/posts?populate=*&filters[category][value]=${props.category}&sort[0]=date:DESC`
+    url = `${api.value}/posts?populate[image][populate][0]=image&populate[category][populate][0]=category&filters[category][value]=${props.category}&sort[0]=date:DESC`
 
   const response = await fetch(url).then((response) => response.json())
   posts.value = response.data
@@ -50,7 +50,7 @@ watchEffect(async () => {
   gap: 16px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1124px) {
   .posts {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
