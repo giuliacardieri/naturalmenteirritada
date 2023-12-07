@@ -9,6 +9,7 @@ defineProps({
   <iframe
     class="embedded-map"
     :src="src"
+    :title="title"
     width="600"
     height="400"
     style="border: 0"
@@ -20,6 +21,7 @@ defineProps({
 
 <style scoped>
 .embedded-map {
+  margin-top: 8px;
   width: 100%;
 }
 </style>

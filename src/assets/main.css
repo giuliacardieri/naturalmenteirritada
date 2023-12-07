@@ -39,7 +39,7 @@
   margin-top: 24px;
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1125px) {
   .main--flex {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 560px;

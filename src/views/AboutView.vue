@@ -69,7 +69,10 @@ const imagePath = computed(() => import.meta.env.VITE_IMAGE_PATH)
 </script>
 
 <template>
-  <Hero image="/assets/popo.jpeg"></Hero>
+  <Hero
+    image="/assets/popo.jpeg"
+    imageAlt="Uma parede com vários cartões postais de papel colados. Eles são coloridos."
+  ></Hero>
   <main class="main">
     <section class="main__section main__section--flex">
       <img

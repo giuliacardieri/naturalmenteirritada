@@ -40,8 +40,9 @@ watchEffect(async () => {
 <style scoped>
 .posts {
   display: grid;
-  grid-column-gap: 48px;
+  grid-column-gap: 32px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  row-gap: 32px;
 }
 
 .posts__empty {

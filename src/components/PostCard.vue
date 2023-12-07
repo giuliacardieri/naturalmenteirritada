@@ -23,7 +23,12 @@ function getImageUrl(value) {
   >
     <img
       v-if="post?.attributes?.image"
-      class="card__image"
+      :class="[
+        {
+          'card__image--bottom': post?.attributes?.image?.imageAlignBottom
+        },
+        'card__image'
+      ]"
       :src="`${imagePath}${post?.attributes?.image?.image?.data?.attributes?.formats?.small?.url}`"
       :alt="post?.attributes?.image?.image?.data?.attributes?.alternativeText"
     />
@@ -68,6 +73,10 @@ function getImageUrl(value) {
   object-fit: cover;
   object-position: top;
   width: 100%;
+}
+
+.card__image--bottom {
+  object-position: bottom;
 }
 
 .card__text {
