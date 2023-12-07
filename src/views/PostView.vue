@@ -51,8 +51,20 @@ watchEffect(async () => {
         content: postDescription
       },
       {
-        name: 'og:image',
+        name: 'og:image:secure',
         content: `${post?.value?.[0].attributes?.image?.image?.data?.attributes?.url}`
+      },
+      {
+        name: 'og:image:type',
+        content: 'image/jpg'
+      },
+      {
+        name: 'og:image:width',
+        content: '428'
+      },
+      {
+        name: 'og:image:height',
+        content: '708'
       },
       {
         name: 'twitter:card',

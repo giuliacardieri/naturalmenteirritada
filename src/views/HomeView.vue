@@ -41,7 +41,23 @@ useHead({
     },
     {
       name: 'og:image',
+      content: 'http://naturalmenteirritada.blog/assets/naturalmente.png'
+    },
+    {
+      name: 'og:image:secure',
       content: 'https://naturalmenteirritada.blog/assets/naturalmente.png'
+    },
+    {
+      name: 'og:image:type',
+      content: 'image/png'
+    },
+    {
+      name: 'og:image:width',
+      content: '2094'
+    },
+    {
+      name: 'og:image:height',
+      content: '708'
     },
     {
       name: 'twitter:card',
@@ -62,7 +78,7 @@ useHead({
     },
     {
       name: 'twitter:image',
-      content: 'https://naturalmenteirritada.blog/assets/naturalmente.png'
+      content: 'http://naturalmenteirritada.blog/assets/naturalmente.png'
     }
   ]
 })
