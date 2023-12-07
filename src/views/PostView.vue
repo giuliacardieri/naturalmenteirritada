@@ -52,7 +52,7 @@ watchEffect(async () => {
       },
       {
         name: 'og:image',
-        content: `${post?.value?.[0].attributes?.image?.data?.attributes?.url}`
+        content: `${post?.value?.[0].attributes?.image?.image?.data?.attributes?.url}`
       },
       {
         name: 'twitter:card',
@@ -72,7 +72,7 @@ watchEffect(async () => {
       },
       {
         name: 'twitter:image',
-        content: `${post?.value?.[0].attributes?.image?.data?.attributes?.url}`
+        content: `${post?.value?.[0].attributes?.image?.image?.data?.attributes?.url}`
       }
     ]
   })
