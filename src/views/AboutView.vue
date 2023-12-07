@@ -2,75 +2,24 @@
 import { computed } from 'vue'
 import Hero from '../components/Hero.vue'
 import IconsList from '../components/IconsList.vue'
-import { useHead } from '@unhead/vue'
+import { useSeoMeta } from '@unhead/vue'
 
-useHead({
+useSeoMeta({
   title: 'Sobre | Naturalmente Irritada',
-  meta: [
-    {
-      name: 'description',
-      content:
-        'Naturalmente Irritada é um blog informativo sobre desastres naturais em nosso planeta. Falamos desde enchentes até quedas de asteroídes.'
-    },
-    {
-      name: 'robots',
-      content: 'index, follow'
-    },
-    {
-      name: 'og:type',
-      content: 'website'
-    },
-    {
-      name: 'og:url',
-      content: 'https://naturalmenteirritada.blog/sobre'
-    },
-    {
-      name: 'og:title',
-      content: 'Sobre | Naturalmente Irritada'
-    },
-    {
-      name: 'og:description',
-      content:
-        'Naturalmente Irritada é um blog informativo sobre desastres naturais em nosso planeta. Falamos desde enchentes até quedas de asteroídes.'
-    },
-    {
-      name: 'og:image',
-      content: 'https://naturalmenteirritada.blog/assets/naturalmente.png'
-    },
-    {
-      name: 'og:image:type',
-      content: 'image/png'
-    },
-    {
-      name: 'og:image:width',
-      content: '2094'
-    },
-    {
-      name: 'og:image:height',
-      content: '708'
-    },
-    {
-      name: 'twitter:card',
-      content: 'summary_large_image'
-    },
-    {
-      name: 'twitter:url',
-      content: 'https://naturalmenteirritada.blog/sobre'
-    },
-    {
-      name: 'twitter:title',
-      content: 'Sobre | Naturalmente Irritada'
-    },
-    {
-      name: 'twitter:description',
-      content:
-        'Naturalmente Irritada é um blog informativo sobre desastres naturais em nosso planeta. Falamos desde enchentes até quedas de asteroídes.'
-    },
-    {
-      name: 'twitter:image',
-      content: 'http://naturalmenteirritada.blog/assets/naturalmente.png'
-    }
-  ]
+  description:
+    'Naturalmente Irritada é um blog informativo sobre desastres naturais em nosso planeta. Falamos desde enchentes até quedas de asteroídes.',
+  ogDescription:
+    'Naturalmente Irritada é um blog informativo sobre desastres naturais em nosso planeta. Falamos desde enchentes até quedas de asteroídes.',
+  ogTitle: 'Sobre | Naturalmente Irritada',
+  ogImage: 'https://naturalmenteirritada.blog/assets/naturalmente.png',
+  ogUrl: 'https://naturalmenteirritada.blog',
+  ogType: 'website',
+  twitterCard: 'summary_large_image',
+  twitterDescription:
+    'Naturalmente Irritada é um blog informativo sobre desastres naturais em nosso planeta. Falamos desde enchentes até quedas de asteroídes.',
+  twitterTitle: 'Sobre | Naturalmente Irritada',
+  twitterImage: 'https://naturalmenteirritada.blog/assets/naturalmente.png',
+  twitterImageType: 'image/png'
 })
 
 const imagePath = computed(() => import.meta.env.VITE_IMAGE_PATH)

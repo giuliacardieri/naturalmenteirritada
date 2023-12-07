@@ -5,7 +5,7 @@ import { useRoute } from 'vue-router'
 import Hero from '../components/Hero.vue'
 import EmbeddedVideo from '../components/EmbeddedVideo.vue'
 import PostSidebar from '../components/PostSidebar.vue'
-import { useHead } from '@unhead/vue'
+import { useSeoMeta } from '@unhead/vue'
 
 const route = useRoute()
 
@@ -23,70 +23,19 @@ watchEffect(async () => {
   const postDescription = (post?.value?.[0].attributes?.content).substring(0, 150)
   loaded.value = true
 
-  useHead({
+  useSeoMeta({
     title: `${post?.value?.[0].attributes?.title} | Naturalmente Irritada`,
-    meta: [
-      {
-        name: 'description',
-        content: postDescription
-      },
-      {
-        name: 'robots',
-        content: 'index, follow'
-      },
-      {
-        name: 'og:type',
-        content: 'website'
-      },
-      {
-        name: 'og:url',
-        content: `https://naturalmenteirritada.blog/post/${post?.value?.[0].attributes?.url}`
-      },
-      {
-        name: 'og:title',
-        content: `${post?.value?.[0].attributes?.title} | Naturalmente Irritada`
-      },
-      {
-        name: 'og:description',
-        content: postDescription
-      },
-      {
-        name: 'og:image',
-        content: `${post?.value?.[0].attributes?.image?.image?.data?.attributes?.url}`
-      },
-      {
-        name: 'og:image:type',
-        content: 'image/jpg'
-      },
-      {
-        name: 'og:image:width',
-        content: '428'
-      },
-      {
-        name: 'og:image:height',
-        content: '708'
-      },
-      {
-        name: 'twitter:card',
-        content: 'summary_large_image'
-      },
-      {
-        name: 'twitter:url',
-        content: `https://naturalmenteirritada.blog/${post?.value?.[0].attributes?.url}`
-      },
-      {
-        name: 'twitter:title',
-        content: `${post?.value?.[0].attributes?.title} | Naturalmente Irritada`
-      },
-      {
-        name: 'twitter:description',
-        content: postDescription
-      },
-      {
-        name: 'twitter:image',
-        content: `${post?.value?.[0].attributes?.image?.image?.data?.attributes?.url}`
-      }
-    ]
+    description: postDescription,
+    ogDescription: postDescription,
+    ogTitle: `${post?.value?.[0].attributes?.title} | Naturalmente Irritada`,
+    ogImage: `${post?.value?.[0].attributes?.image?.image?.data?.attributes?.url}`,
+    ogUrl: `https://naturalmenteirritada.blog/post/${post?.value?.[0].attributes?.url}`,
+    ogType: 'article',
+    twitterCard: 'summary_large_image',
+    twitterDescription: postDescription,
+    twitterTitle: `${post?.value?.[0].attributes?.title} | Naturalmente Irritada`,
+    twitterImage: `${post?.value?.[0].attributes?.image?.image?.data?.attributes?.url}`,
+    twitterImageType: 'image/jpeg'
   })
 })
 </script>
