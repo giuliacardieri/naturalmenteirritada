@@ -52,18 +52,18 @@ watchEffect(async () => {
       },
       {
         name: 'og:image',
-        content: `${imagePath.value}${post?.value?.[0].attributes?.image?.data?.attributes?.url}`
+        content: `${post?.value?.[0].attributes?.image?.data?.attributes?.url}`
       },
       {
         name: 'twitter:card',
         content: 'summary_large_image'
       },
       {
-        name: 'og:url',
+        name: 'twitter:url',
         content: `https://naturalmenteirritada.blog/${post?.value?.[0].attributes?.url}`
       },
       {
-        name: 'og:title',
+        name: 'twitter:title',
         content: `${post?.value?.[0].attributes?.title} | Naturalmente Irritada`
       },
       {
@@ -72,7 +72,7 @@ watchEffect(async () => {
       },
       {
         name: 'twitter:image',
-        content: `${imagePath.value}${post?.value?.[0].attributes?.image?.data?.attributes?.url}`
+        content: `${post?.value?.[0].attributes?.image?.data?.attributes?.url}`
       }
     ]
   })

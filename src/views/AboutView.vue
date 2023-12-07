@@ -35,18 +35,18 @@ useHead({
     },
     {
       name: 'og:image',
-      content: getImageUrl()
+      content: 'https://naturalmenteirritada.blog/assets/naturalmente.png'
     },
     {
       name: 'twitter:card',
       content: 'summary_large_image'
     },
     {
-      name: 'og:url',
+      name: 'twitter:url',
       content: 'https://naturalmenteirritada.blog/sobre'
     },
     {
-      name: 'og:title',
+      name: 'twitter:title',
       content: 'Sobre | Naturalmente Irritada'
     },
     {
@@ -56,14 +56,10 @@ useHead({
     },
     {
       name: 'twitter:image',
-      content: getImageUrl()
+      content: 'https://naturalmenteirritada.blog/assets/naturalmente.png'
     }
   ]
 })
-
-function getImageUrl(value) {
-  return new URL(`../assets/naturalmente.png`, import.meta.url).href
-}
 
 const imagePath = computed(() => import.meta.env.VITE_IMAGE_PATH)
 </script>
