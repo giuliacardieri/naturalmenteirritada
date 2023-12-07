@@ -40,7 +40,7 @@ watchEffect(async () => {
       },
       {
         name: 'og:url',
-        content: `https://naturalmenteirritada.blog/${post?.value?.[0].attributes?.url}`
+        content: `https://naturalmenteirritada.blog/post/${post?.value?.[0].attributes?.url}`
       },
       {
         name: 'og:title',
@@ -51,7 +51,7 @@ watchEffect(async () => {
         content: postDescription
       },
       {
-        name: 'og:image:secure',
+        name: 'og:image',
         content: `${post?.value?.[0].attributes?.image?.image?.data?.attributes?.url}`
       },
       {

@@ -35,10 +35,6 @@ useHead({
     },
     {
       name: 'og:image',
-      content: 'http://naturalmenteirritada.blog/assets/naturalmente.png'
-    },
-    {
-      name: 'og:image:secure',
       content: 'https://naturalmenteirritada.blog/assets/naturalmente.png'
     },
     {
