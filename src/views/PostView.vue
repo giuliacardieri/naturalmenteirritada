@@ -13,7 +13,6 @@ const post = ref(null)
 const loaded = ref(false)
 
 const api = computed(() => import.meta.env.VITE_API)
-const imagePath = computed(() => import.meta.env.VITE_IMAGE_PATH)
 
 watchEffect(async () => {
   const url = route.params.url
@@ -84,7 +83,7 @@ watchEffect(async () => {
   <Hero
     :imageAlignBottom="post?.[0].attributes?.image?.imageAlignBottom"
     :imageAlt="post?.[0].attributes?.image?.image?.data?.attributes?.alternativeText"
-    :image="`${imagePath}${post?.[0].attributes?.image?.image?.data?.attributes?.url}`"
+    :image="post?.[0].attributes?.image?.image?.data?.attributes?.url"
   ></Hero>
   <main class="main main--flex">
     <article class="main__section">

@@ -6,8 +6,6 @@ defineProps({
   post: { type: Object }
 })
 
-const imagePath = computed(() => import.meta.env.VITE_IMAGE_PATH)
-
 function getImageUrl(value) {
   return new URL(`../assets/icons/${value}.png`, import.meta.url).href
 }
@@ -29,7 +27,7 @@ function getImageUrl(value) {
         },
         'card__image'
       ]"
-      :src="`${imagePath}${post?.attributes?.image?.image?.data?.attributes?.formats?.small?.url}`"
+      :src="post?.attributes?.image?.image?.data?.attributes?.formats?.small?.url"
       :alt="post?.attributes?.image?.image?.data?.attributes?.alternativeText"
     />
     <div class="card__text">
