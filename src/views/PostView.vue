@@ -11,6 +11,7 @@ const route = useRoute()
 
 const post = ref(null)
 const loaded = ref(false)
+const postDescription = ref('')
 
 const api = computed(() => import.meta.env.VITE_API)
 
@@ -31,7 +32,7 @@ watchEffect(async () => {
     `${api.value}/posts?populate[image][populate][0]=image&populate[category][populate][0]=category&populate[map][populate][0]=map&populate[video][populate][0]=video&filters[url]=${url}`
   ).then((response) => response.json())
   post.value = response.data
-  const postDescription = (post?.value?.[0].attributes?.content).substring(0, 150)
+  postDescription.value = (post?.value?.[0].attributes?.content).substring(0, 150)
   loaded.value = true
 })
 </script>
