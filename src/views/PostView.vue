@@ -14,6 +14,17 @@ const loaded = ref(false)
 
 const api = computed(() => import.meta.env.VITE_API)
 
+useSeoMeta({
+  title: `${post?.value?.[0].attributes?.title} | Naturalmente Irritada`,
+  description: postDescription,
+  ogDescription: postDescription,
+  ogTitle: `${post?.value?.[0].attributes?.title} | Naturalmente Irritada`,
+  ogImage: `${post?.value?.[0].attributes?.image?.image?.data?.attributes?.url}`,
+  ogUrl: `https://naturalmenteirritada.blog/post/${post?.value?.[0].attributes?.url}`,
+  ogType: 'article',
+  twitterCard: 'summary_large_image'
+})
+
 watchEffect(async () => {
   const url = route.params.url
   const response = await fetch(
@@ -22,21 +33,6 @@ watchEffect(async () => {
   post.value = response.data
   const postDescription = (post?.value?.[0].attributes?.content).substring(0, 150)
   loaded.value = true
-
-  useSeoMeta({
-    title: `${post?.value?.[0].attributes?.title} | Naturalmente Irritada`,
-    description: postDescription,
-    ogDescription: postDescription,
-    ogTitle: `${post?.value?.[0].attributes?.title} | Naturalmente Irritada`,
-    ogImage: `${post?.value?.[0].attributes?.image?.image?.data?.attributes?.url}`,
-    ogUrl: `https://naturalmenteirritada.blog/post/${post?.value?.[0].attributes?.url}`,
-    ogType: 'article',
-    twitterCard: 'summary_large_image',
-    twitterDescription: postDescription,
-    twitterTitle: `${post?.value?.[0].attributes?.title} | Naturalmente Irritada`,
-    twitterImage: `${post?.value?.[0].attributes?.image?.image?.data?.attributes?.url}`,
-    twitterImageType: 'image/jpeg'
-  })
 })
 </script>
 

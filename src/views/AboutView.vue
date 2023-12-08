@@ -12,14 +12,9 @@ useSeoMeta({
     'Naturalmente Irritada é um blog informativo sobre desastres naturais em nosso planeta. Falamos desde enchentes até quedas de asteroídes.',
   ogTitle: 'Sobre | Naturalmente Irritada',
   ogImage: 'https://naturalmenteirritada.blog/assets/naturalmente.png',
-  ogUrl: 'https://naturalmenteirritada.blog',
+  ogUrl: 'https://naturalmenteirritada.blog/sobre/',
   ogType: 'website',
-  twitterCard: 'summary_large_image',
-  twitterDescription:
-    'Naturalmente Irritada é um blog informativo sobre desastres naturais em nosso planeta. Falamos desde enchentes até quedas de asteroídes.',
-  twitterTitle: 'Sobre | Naturalmente Irritada',
-  twitterImage: 'https://naturalmenteirritada.blog/assets/naturalmente.png',
-  twitterImageType: 'image/png'
+  twitterCard: 'summary_large_image'
 })
 
 const imagePath = computed(() => import.meta.env.VITE_IMAGE_PATH)
