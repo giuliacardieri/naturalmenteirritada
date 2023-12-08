@@ -12,16 +12,19 @@ const route = useRoute()
 const post = ref(null)
 const loaded = ref(false)
 const postDescription = ref('')
+const postTitle = ref('')
+const postImage = ref('')
+const postUrl = ref('')
 
 const api = computed(() => import.meta.env.VITE_API)
 
 useSeoMeta({
-  title: `${post?.value?.[0].attributes?.title} | Naturalmente Irritada`,
+  title: postTitle,
   description: postDescription,
   ogDescription: postDescription,
-  ogTitle: `${post?.value?.[0].attributes?.title} | Naturalmente Irritada`,
-  ogImage: `${post?.value?.[0].attributes?.image?.image?.data?.attributes?.url}`,
-  ogUrl: `https://naturalmenteirritada.blog/post/${post?.value?.[0].attributes?.url}`,
+  ogTitle: postTitle,
+  ogImage: postImage,
+  ogUrl: postUrl,
   ogType: 'article',
   twitterCard: 'summary_large_image'
 })
@@ -32,7 +35,10 @@ watchEffect(async () => {
     `${api.value}/posts?populate[image][populate][0]=image&populate[category][populate][0]=category&populate[map][populate][0]=map&populate[video][populate][0]=video&filters[url]=${url}`
   ).then((response) => response.json())
   post.value = response.data
+  postTitle.value = `${post?.value?.[0].attributes?.title} | Naturalmente Irritada`
   postDescription.value = (post?.value?.[0].attributes?.content).substring(0, 150)
+  postImage.value = post?.value?.[0].attributes?.image?.image?.data?.attributes?.url
+  postUrl.value = `https://naturalmenteirritada.blog/post/${post?.value?.[0].attributes?.url}`
   loaded.value = true
 })
 </script>
