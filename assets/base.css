@@ -1,0 +1,26 @@
+:root {
+  --white: #f9f9f9;
+  --black: #222;
+  --gray: #727272;
+  --dark-green: #425333;
+  --green: #66814f;
+  --dark-blue: #2f3b4e;
+  --blue: #4e617f;
+  --blue-transparent: rgba(78, 97, 127, 0.52);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  color: var(--black);
+  font-family: "Futura", sans-serif;
+  min-height: 100vh;
+  padding: 0;
+  position: relative;
+}
