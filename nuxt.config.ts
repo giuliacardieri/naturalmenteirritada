@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: {
     public: {
-      apiUrl: "http://localhost:1337/api",
+      apiUrl: "https://shrouded-chamber-44012-cb885503a80c.herokuapp.com/api",
     },
   },
   modules: ["dayjs-nuxt"],
