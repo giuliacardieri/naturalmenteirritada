@@ -43,6 +43,7 @@ import { ref, computed } from "vue";
 
 const route = useRoute();
 const loaded = ref(false);
+const postMeta = ref({});
 const url = route.params.id;
 
 const apiUrl = computed(() => {
@@ -50,19 +51,27 @@ const apiUrl = computed(() => {
 });
 
 const runtimeConfig = useRuntimeConfig();
-const { data } = await useFetch(apiUrl, { lazy: true, server: false });
+const { data } = await useFetch(apiUrl, { server: false });
 loaded.value = true;
+postMeta.value = data?.value?.data[0].attributes;
 
 useSeoMeta({
-  title: `${data?.data?.[0].attributes?.title} | Naturalmente Irritada`,
+  title: () =>
+    `${data?.value?.data[0].attributes?.title} | Naturalmente Irritada`,
+  ogTitle: () =>
+    `${data?.value?.data[0].attributes?.title} | Naturalmente Irritada`,
   robots: "index, follow",
   googlebot: "index, follow",
-  canonical: `https://naturalmenteirritada.blog/post/${data?.data?.[0].attributes?.url}`,
-  description: data?.data?.[0].attributes?.content?.substring(0, 150),
-  ogDescription: data?.data?.[0].attributes?.content?.substring(0, 150),
-  ogTitle: `${data?.data?.[0].attributes?.title} | Naturalmente Irritada`,
-  ogImage: data?.data?.[0].attributes?.image?.image?.data?.attributes?.url,
-  ogUrl: `https://naturalmenteirritada.blog/post/${data?.data?.[0].attributes?.url}`,
+  canonical: () =>
+    `https://naturalmenteirritada.blog/post/${data?.value?.data[0].attributes?.url}`,
+  ogUrl: () =>
+    `https://naturalmenteirritada.blog/post/${data?.value?.data[0].attributes?.url}`,
+  description: () =>
+    `${data?.value?.data[0].attributes?.content?.substring(0, 150)}`,
+  ogDescription: () =>
+    `${data?.value?.data[0].attributes?.content?.substring(0, 150)}`,
+  ogImage: () =>
+    `${data?.value?.data[0].attributes?.image?.image?.data?.attributes?.url}`,
   ogType: "article",
   twitterCard: "summary_large_image",
 });
