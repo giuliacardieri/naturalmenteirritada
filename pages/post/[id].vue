@@ -51,7 +51,7 @@ const apiUrl = computed(() => {
 });
 
 const runtimeConfig = useRuntimeConfig();
-const { data } = await useFetch(apiUrl, { server: false });
+const { data } = await useFetch(apiUrl);
 loaded.value = true;
 postMeta.value = data?.value?.data[0].attributes;
 
