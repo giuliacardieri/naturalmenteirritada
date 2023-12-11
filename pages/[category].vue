@@ -38,7 +38,7 @@ useSeoMeta({
     "Naturalmente Irritada é um blog informativo sobre desastres naturais em nosso planeta. Falamos desde enchentes até quedas de asteroídes.",
   ogTitle: "Naturalmente Irritada",
   ogImage:
-    "https://res-console.cloudinary.com/du9aie2jo/media_explorer_thumbnails/187bce21dede972ead5e361b8435fdc6/detailed",
+    "https://res.cloudinary.com/du9aie2jo/image/upload/v1702254950/urivgijvxon9xpp7rz4g.png",
   ogUrl: "https://naturalmenteirritada.blog/",
   ogType: "website",
   twitterCard: "summary_large_image",
