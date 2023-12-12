@@ -23,6 +23,17 @@
   line-height: 1.5;
 }
 
+.markdown a {
+  background-color: rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.markdown a:hover,
+.markdown a:focus {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
 .markdown p + p {
   margin-top: 1em;
 }

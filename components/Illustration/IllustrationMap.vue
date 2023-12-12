@@ -14,7 +14,7 @@
 
 .map__circle {
   background-color: var(--white);
-  border: 8px solid #c30808;
+  border: 8px solid var(--black);
   border-radius: 100%;
   display: block;
   height: 20px;
@@ -24,7 +24,7 @@
 .map__bottom {
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-top: 12px solid #c30808;
+  border-top: 12px solid var(--black);
   height: 0;
   margin: -4px 0 0 2px;
   width: 0;

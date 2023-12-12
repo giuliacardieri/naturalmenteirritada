@@ -6,7 +6,6 @@
         <CategoryButton
           :label="post?.[0].attributes?.category?.data?.attributes?.name"
           :value="post?.[0].attributes?.category?.data?.attributes?.value"
-          large
           hasUrl
         />
       </section>
@@ -88,6 +87,7 @@ defineProps({
 <style scoped>
 .sidebar {
   background-color: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   padding: var(--sidebar-padding, 32px 0);
   position: relative;
 }
@@ -97,6 +97,7 @@ defineProps({
 }
 
 .sidebar__group {
+  align-items: center;
   display: flex;
   gap: 8px;
 }
@@ -113,11 +114,6 @@ defineProps({
   .sidebar__h2--padding,
   .sidebar__group--padding {
     padding: 0 32px;
-  }
-
-  .sidebar__content {
-    position: sticky;
-    top: 104px;
   }
 }
 

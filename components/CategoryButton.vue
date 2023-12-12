@@ -1,6 +1,6 @@
 <template>
   <button
-    :class="[{ 'button--active': active, 'button--large': large }, 'button']"
+    :class="[{ 'button--active': active }, 'button']"
     @click="goToUrl(value)"
   >
     <img
@@ -18,7 +18,6 @@ defineProps({
   label: { type: String },
   value: { type: String },
   active: { type: Boolean, default: false },
-  large: { type: Boolean, default: false },
   hasUrl: { type: Boolean, default: false },
 });
 
@@ -52,10 +51,6 @@ async function goToUrl(value) {
 .button--active {
   background-color: var(--dark-blue);
   color: var(--white);
-}
-
-.button--large {
-  font-size: 18px;
 }
 
 .button__icon {

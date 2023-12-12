@@ -5,26 +5,26 @@
 .cross {
   height: 24px;
   position: relative;
-  width: 24px;
+  width: 20px;
 }
 
 .cross:before {
-  background-color: #c30808;
+  background-color: var(--black);
   content: "";
   height: 24px;
-  left: 9px;
+  left: 8px;
   position: absolute;
   top: 0;
-  width: 6px;
+  width: 4px;
 }
 
 .cross:after {
-  background-color: #c30808;
+  background-color: var(--black);
   content: "";
-  height: 6px;
+  height: 4px;
   left: 0px;
   position: absolute;
   top: 9px;
-  width: 24px;
+  width: 20px;
 }
 </style>

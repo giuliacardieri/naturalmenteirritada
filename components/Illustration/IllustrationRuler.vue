@@ -3,7 +3,7 @@
 </template>
 <style scoped>
 .ruler {
-  background-color: var(--blue);
+  background-color: var(--black);
   border-radius: 2px;
   height: 32px;
   position: relative;

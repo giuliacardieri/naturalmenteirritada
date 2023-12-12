@@ -5,38 +5,38 @@
 </template>
 <style scoped>
 .calendar {
-  background: linear-gradient(-30deg, rgba(77, 144, 142, 0.15) 49%, #fff 50%);
-  border: 1px solid var(--blue);
+  background: linear-gradient(-30deg, rgba(0, 0, 0, 0.15) 49%, #fff 50%);
+  border: 1px solid var(--black);
   border-width: 6px 2px 2px 2px;
   border-radius: 2px;
-  color: var(--green);
+  color: var(--black);
   height: 24px;
   position: relative;
-  width: 32px;
+  width: 20px;
 }
 
 .calendar:after {
-  background-color: var(--blue);
+  background-color: var(--black);
   border-radius: 4px;
   content: "";
   display: block;
   height: 6px;
-  left: 3px;
+  left: 1px;
   position: absolute;
   top: -10px;
-  width: 8px;
+  width: 4px;
 }
 
 .calendar:before {
-  background-color: var(--blue);
+  background-color: var(--black);
   border-radius: 4px;
   content: "";
   display: block;
   height: 6px;
   position: absolute;
-  right: 3px;
+  right: 1px;
   top: -10px;
-  width: 8px;
+  width: 4px;
 }
 
 .calendar__number {

@@ -17,7 +17,7 @@
 }
 
 .line {
-  background-color: var(--green);
+  background-color: var(--black);
   height: 2px;
   position: absolute;
 }
