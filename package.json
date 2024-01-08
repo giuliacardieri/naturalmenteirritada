@@ -17,6 +17,7 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@nuxtjs/sitemap": "^5.0.1",
     "markdown-it": "^14.0.0"
   }
 }
