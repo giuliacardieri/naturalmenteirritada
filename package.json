@@ -12,7 +12,10 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "dayjs-nuxt": "^2.1.9",
+    "i": "^0.3.7",
+    "npm": "^10.2.5",
     "nuxt": "^3.8.2",
+    "nuxt-gtag": "^1.1.2",
     "vue": "^3.3.10",
     "vue-router": "^4.2.5"
   },

@@ -6,7 +6,7 @@ export default defineNuxtConfig({
       apiUrl: "https://shrouded-chamber-44012-cb885503a80c.herokuapp.com/api",
     },
   },
-  modules: ["dayjs-nuxt", "@nuxtjs/sitemap"],
+  modules: ["dayjs-nuxt", "@nuxtjs/sitemap", "nuxt-gtag"],
   site: {
     url: "https://naturalmenteirritada.blog",
   },
@@ -22,5 +22,8 @@ export default defineNuxtConfig({
   dayjs: {
     locales: ["pt"],
     defaultLocale: "pt",
+  },
+  gtag: {
+    id: "G-3JE1D3J5H2",
   },
 });
