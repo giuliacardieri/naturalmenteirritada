@@ -9,6 +9,7 @@
       height="28"
       width="28"
       :src="`/icons/${value}.webp`"
+      alt=""
     />
     {{ label }}
   </button>
