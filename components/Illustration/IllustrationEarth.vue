@@ -1,5 +1,5 @@
 <template>
-  <div :class="[{ 'earth--mad': mad }, 'earth']">
+  <div :class="[{ 'earth--mad': mad, 'earth--spinning': spinning }, 'earth']">
     <div class="eye left"></div>
     <div class="eye right"></div>
     <div class="mouth"></div>
@@ -9,6 +9,10 @@
 <script setup>
 defineProps({
   mad: {
+    type: Boolean,
+    default: false,
+  },
+  spinning: {
     type: Boolean,
     default: false,
   },
@@ -32,6 +36,10 @@ defineProps({
 
 .earth:not(.earth--mad) .mouth {
   animation: earthMouth 10s linear infinite;
+}
+
+.earth--spinning {
+  animation: rotateEarth 1s linear infinite;
 }
 
 .earth:before {
@@ -145,6 +153,17 @@ defineProps({
   100% {
     left: 2px;
     top: 1px;
+  }
+}
+@keyframes rotateEarth {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 </style>

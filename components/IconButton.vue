@@ -4,6 +4,8 @@
     :href="link"
     :aria-label="label"
     target="_blank"
+    height="64"
+    width="64"
   >
     <img class="icon__image" :src="`/icons/${icon}.svg`" :alt="label" />
   </a>

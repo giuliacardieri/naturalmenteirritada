@@ -6,8 +6,9 @@
     <img
       v-if="value"
       class="button__icon"
-      :alt="label"
-      :src="`/icons/${value}.png`"
+      height="28"
+      width="28"
+      :src="`/icons/${value}.webp`"
     />
     {{ label }}
   </button>

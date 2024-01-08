@@ -25,8 +25,10 @@
           <img
             class="card__icon"
             :alt="post?.attributes?.category?.data?.attributes?.name"
-            :src="`/icons/${post?.attributes?.category?.data?.attributes?.value}.png`"
+            :src="`/icons/${post?.attributes?.category?.data?.attributes?.value}.webp`"
             itemprop="image"
+            height="24"
+            width="24"
         /></span>
         {{ post?.attributes?.category?.data?.attributes?.name }} -
         <span itemprop="datePublished">{{

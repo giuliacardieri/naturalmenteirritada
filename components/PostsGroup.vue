@@ -3,7 +3,13 @@
     <div v-if="loaded" class="posts">
       <PostCard v-for="post in posts?.data" :key="post.id" :post="post" />
     </div>
-    <section v-if="!loaded || !posts?.data?.length">
+    <section v-else>
+      <div class="posts__empty">
+        <IllustrationEarth mad spinning />
+        <h2 class="main__h2">Carregando...</h2>
+      </div>
+    </section>
+    <section v-if="loaded && !posts?.data?.length">
       <div class="posts__empty">
         <IllustrationEarth mad />
         <h2 class="main__h2">
@@ -31,8 +37,13 @@ const url = computed(() => {
 
 const loaded = ref(false);
 const runtimeConfig = useRuntimeConfig();
-const { data: posts } = await useFetch(url, { lazy: true, server: false });
-loaded.value = true;
+const { data: posts } = await useFetch(url, {
+  lazy: true,
+  server: false,
+  onResponse() {
+    loaded.value = true;
+  },
+});
 </script>
 <style scoped>
 .posts {
