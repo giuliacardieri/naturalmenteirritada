@@ -7,17 +7,17 @@ export default defineNuxtConfig({
     },
   },
   modules: ["dayjs-nuxt", "@nuxtjs/sitemap"],
+  site: {
+    url: "https://naturalmenteirritada.blog",
+  },
   sitemap: {
-    hostname: "https://naturalmenteirritada.blog",
-    routes: [
-      "/post/chicxulub-o-asteroide-dos-dinossauros",
-      "/post/o-tsunami-no-sudeste-asiatico",
-      "/post/a-erupcao-de-eyjafjallajokull",
-      "/post/entendendo-mais-sobre-vulcoes",
-      "/post/o-tornado-de-indaiatuba",
-      "/post/porque-tornados-acontecem",
-      "/post/o-que-causa-um-tsunami",
-    ],
+    urls: async () => {
+      const response = await fetch(
+        "https://shrouded-chamber-44012-cb885503a80c.herokuapp.com/api/posts"
+      );
+      const data = await response.json();
+      return data.data.map((post) => `/posts/${post.attributes.url}`);
+    },
   },
   dayjs: {
     locales: ["pt"],
