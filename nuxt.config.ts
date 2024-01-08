@@ -16,7 +16,7 @@ export default defineNuxtConfig({
         "https://shrouded-chamber-44012-cb885503a80c.herokuapp.com/api/posts"
       );
       const data = await response.json();
-      return data.data.map((post) => `/posts/${post.attributes.url}`);
+      return data.data.map((post) => `/post/${post.attributes.url}`);
     },
   },
   dayjs: {
